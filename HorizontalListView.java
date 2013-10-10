@@ -242,8 +242,8 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
 
 		child = getChildAt(getChildCount() - 1);
 		while (child != null && child.getLeft() + dx >= getWidth()) {
-			if (mRightViewIndex < getCount()) {
-				mRecycler.addScrapView(child, mAdapter.getItemViewType(mLeftViewIndex));
+			if (mRightViewIndex < mAdapter.getCount()) {
+				mRecycler.addScrapView(child, mAdapter.getItemViewType(mRightViewIndex));
 			}
 			removeViewInLayout(child);
 			mRightViewIndex--;
